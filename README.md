@@ -58,10 +58,6 @@ Edit `chatbot.py` dan ganti `OPEN_ROUTER_API_KEY` dengan key milikmu sendiri dar
 OPEN_ROUTER_API_KEY = "your-api-key-here"
 ```
 
-## 🖼️ Preview
-
-![Chatbot UI Preview](assets/chat-preview.png)
-
 ## 📡 Deployment (Optional)
 
 Kamu bisa deploy ke:
