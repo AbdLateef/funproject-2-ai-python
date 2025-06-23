@@ -1,9 +1,8 @@
-#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
 import streamlit as st
 import requests
 
 # Config API Key and Model
-OPEN_ROUTER_API_KEY= "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"
+OPEN_ROUTER_API_KEY= "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"
 MODEL="openai/gpt-3.5-turbo"
 
 HEADERS = {
@@ -42,11 +41,11 @@ if user_input:
         }
 
         response = requests.post(API_URL, headers=HEADERS, json=payload)
-
+        
         if response.status_code == 200:
             bot_response = response.json()["choices"][0]["message"]["content"]
         else:
-            bot_response = "No response from the model."
+            bot_response = response.json().get("error", {}).get("message", "Error: Unable to get response from the model.")
 
     st.chat_message("assistant").markdown(bot_response)
     st.session_state.chat_history.append({"role": "assistant", "content": bot_response})
